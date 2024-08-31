@@ -9,6 +9,14 @@ function myMenuFunction(){
   }
 }
 
+// Hide the menu when a link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    var menuBtn = document.getElementById("myNavMenu");
+    menuBtn.className = "nav-menu"; // Reset to non-responsive class
+  });
+});
+
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
 window.onscroll = function() {headerShadow()};
 
@@ -30,7 +38,6 @@ function headerShadow() {
   }
 }
 
-
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
   strings : ["Developer","Designer"],
@@ -39,7 +46,6 @@ var typingEffect = new Typed(".typedText",{
   backSpeed : 80,
   backDelay : 2000
 })
-
 
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
 const sr = ScrollReveal({
@@ -56,7 +62,6 @@ sr.reveal('.featured-text-info',{delay: 200})
 sr.reveal('.featured-text-btn',{delay: 200})
 sr.reveal('.social_icons',{delay: 200})
 sr.reveal('.featured-image',{delay: 300})
-
 
 /* -- PROJECT BOX -- */
 sr.reveal('.project-box',{interval: 200})
@@ -88,10 +93,7 @@ reset: true
 srRight.reveal('.skills-box',{delay: 100})
 srRight.reveal('.form-control',{delay: 100})
 
-
-
 /* ----- CHANGE ACTIVE LINK ----- */
-
 const sections = document.querySelectorAll('section[id]')
 
 function scrollActive() {
